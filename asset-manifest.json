@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/IngLuissolis/CoderHouseReact/static/css/main.28e53ee6.css",
-    "main.js": "/IngLuissolis/CoderHouseReact/static/js/main.669cb2d9.js",
-    "static/media/fondo-titulo-secundario.jpg": "/IngLuissolis/CoderHouseReact/static/media/fondo-titulo-secundario.0db0b5b1230804e03be1.jpg",
-    "index.html": "/IngLuissolis/CoderHouseReact/index.html",
-    "main.28e53ee6.css.map": "/IngLuissolis/CoderHouseReact/static/css/main.28e53ee6.css.map",
-    "main.669cb2d9.js.map": "/IngLuissolis/CoderHouseReact/static/js/main.669cb2d9.js.map"
+    "main.css": "/IngLuissolis/CoderHouseReact/public/index.html/static/css/main.ad1e24cc.css",
+    "main.js": "/IngLuissolis/CoderHouseReact/public/index.html/static/js/main.669cb2d9.js",
+    "static/media/fondo-titulo-secundario.jpg": "/IngLuissolis/CoderHouseReact/public/index.html/static/media/fondo-titulo-secundario.0db0b5b1230804e03be1.jpg",
+    "index.html": "/IngLuissolis/CoderHouseReact/public/index.html/index.html",
+    "main.ad1e24cc.css.map": "/IngLuissolis/CoderHouseReact/public/index.html/static/css/main.ad1e24cc.css.map",
+    "main.669cb2d9.js.map": "/IngLuissolis/CoderHouseReact/public/index.html/static/js/main.669cb2d9.js.map"
   },
   "entrypoints": [
-    "static/css/main.28e53ee6.css",
+    "static/css/main.ad1e24cc.css",
     "static/js/main.669cb2d9.js"
   ]
 }
