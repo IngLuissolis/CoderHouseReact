@@ -1,9 +1,17 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import './CartWidget.css';
 
 //Destructuring al props para mejor legilibilidad del codigo, porque es un objeto
 //En el caso de no utilizar destructuring seria props.mensaje y props.temp
 const CartWidget = () => {
+
+  let [carrito, setCarrito] = useState(localStorage.getItem('Qatar'));
+
+  useEffect (() => {
+    // console.log('CartWidget: ', carrito);
+    setCarrito(localStorage.getItem('Qatar'));
+  },[carrito])
+  
   return (
     <button className="btn btn-info">
       <svg

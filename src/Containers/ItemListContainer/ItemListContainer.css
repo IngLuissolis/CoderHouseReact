@@ -1,0 +1,14 @@
+.imgBandera {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    border: 0.2rem solid gold;
+}
+
+#divContainer {
+    background-image: url("../../img/fondo-titulo-secundario.jpg");
+    color: white;
+    border-radius: 0.5rem;
+    width: 28rem;
+    height: auto;
+}

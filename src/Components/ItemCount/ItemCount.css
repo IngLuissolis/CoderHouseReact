@@ -1,0 +1,11 @@
+.counterIncDec {
+    width: 12rem;
+}
+
+.counter {
+    width: 35rem;
+    /* border: 0.1rem solid grey; */
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}

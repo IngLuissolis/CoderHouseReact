@@ -1,0 +1,20 @@
+.imgBandera {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    border: 0.2rem solid gold;
+}
+
+.alternativaContainer {
+    margin: 0.5rem 1rem;
+    border: 0.15rem solid rgba(148, 45, 45, 0.747);
+    border-radius: 0.5rem;
+}
+
+.imgCamiseta {
+    border-radius: 1rem;
+}
+
+.card {
+    width: 30rem;
+}

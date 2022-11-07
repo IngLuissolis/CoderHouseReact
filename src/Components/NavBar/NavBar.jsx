@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import CartWidget from "../CartWidget/CartWidget";
 import './NavBar.css';
 
@@ -8,10 +9,8 @@ const NavBar = () => {
     return (
             <ul className='d-flex justify-content-between m-1'>
                 <div>
-                    <li><a href="#home">Camisetas</a></li>
-                    <li><a href="#news">Gorros</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#about">About</a></li>
+                    <li><Link to='/'>Home</Link></li>
+                    <li><Link to='/alternativa'>Alternativa</Link></li>
                 </div>
                 <div className='d-flex align-items-center m-1'>
                     <CartWidget/>
