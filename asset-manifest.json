@@ -1,8 +1,9 @@
 {
   "files": {
     "main.css": "/CoderHouseReact/static/css/main.3209163b.css",
-    "main.js": "/CoderHouseReact/static/js/main.f0468a58.js",
+    "main.js": "/CoderHouseReact/static/js/main.822d32ec.js",
     "static/media/fondo-titulo-secundario.jpg": "/CoderHouseReact/static/media/fondo-titulo-secundario.0db0b5b1230804e03be1.jpg",
+    "static/media/Camerun1.jpg": "/CoderHouseReact/static/media/Camerun1.eea62a962ae044a22931.jpg",
     "static/media/Mexico2.webp": "/CoderHouseReact/static/media/Mexico2.61189774971f74ea2e75.webp",
     "static/media/ArabiaSaudita2.webp": "/CoderHouseReact/static/media/ArabiaSaudita2.a78a30ffce3d91a52d52.webp",
     "static/media/Iran2.webp": "/CoderHouseReact/static/media/Iran2.97c29f0a0b90f7371f9b.webp",
@@ -38,6 +39,7 @@
     "static/media/Croacia1.webp": "/CoderHouseReact/static/media/Croacia1.8f63851c52b89491e05f.webp",
     "static/media/Belgica1.webp": "/CoderHouseReact/static/media/Belgica1.a28f8df6a8c3803e5a42.webp",
     "static/media/Argentina1.webp": "/CoderHouseReact/static/media/Argentina1.94189568de4a19261da0.webp",
+    "static/media/Camerun2.webp": "/CoderHouseReact/static/media/Camerun2.7b8c7cb2c1d59cc27b53.webp",
     "static/media/España1.webp": "/CoderHouseReact/static/media/España1.80e70ea03514ff311109.webp",
     "static/media/BanderaIran.png": "/CoderHouseReact/static/media/BanderaIran.5437059a60d6fc812093.png",
     "static/media/Inglaterra2.webp": "/CoderHouseReact/static/media/Inglaterra2.0cd9cb68974d602986c7.webp",
@@ -100,10 +102,10 @@
     "index.html": "/CoderHouseReact/index.html",
     "static/media/cart.svg": "/CoderHouseReact/static/media/cart.05dfd14f0943edf68c9a.svg",
     "main.3209163b.css.map": "/CoderHouseReact/static/css/main.3209163b.css.map",
-    "main.f0468a58.js.map": "/CoderHouseReact/static/js/main.f0468a58.js.map"
+    "main.822d32ec.js.map": "/CoderHouseReact/static/js/main.822d32ec.js.map"
   },
   "entrypoints": [
     "static/css/main.3209163b.css",
-    "static/js/main.f0468a58.js"
+    "static/js/main.822d32ec.js"
   ]
 }
