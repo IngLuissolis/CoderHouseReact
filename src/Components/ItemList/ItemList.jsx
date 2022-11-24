@@ -1,61 +1,39 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
+import { useContext } from "react";
 import { useParams } from "react-router-dom";
+import { Grupo } from "../../Contexts/ProductsContent";
+import {ClimbingBoxLoader} from 'react-spinners';
 import Item from '../Item/Item';
-
-/*Base de Datos Local*/
-import gruposBBDD from '../../BBDD/grupos.json';
 
 const ItemList = () => {
 
-    const {categoryId} = useParams();
-    const [grupos, setGrupos] = useState([]);
-    const [paises, setPaises] = useState([]);
+  const { products } = useContext(Grupo);
+  const { categoryId } = useParams();
 
-    useEffect (() => {
-
-        (async () => {
-
-            const obtenerGrupos = () => {
-              return new Promise((resolve, reject) => {
-                setTimeout(() => {
-                  resolve(gruposBBDD);
-                }, 1000)
-              })
-            }
-      
-            try {
-              const responsePaises = await obtenerGrupos();
-              setGrupos(responsePaises);        
-            } catch (error) {
-              console.log('Error: ', error);
-            }
-
-        }) ()
-
-      if (grupos !== undefined) {
-          grupos.map((grupo) => {
-              if (grupo.ID === categoryId) {
-                setPaises(grupo.paises);
-              }
-              return <></>;
-          })
-      }
-
-    }, [categoryId, grupos, paises])
-
-    return(
-        <>
-          <h2 key={grupos.nombre}>Grupo {categoryId}</h2>
-          <div className="d-flex justify-content-center row row-cols-1 row-cols-sm-2 row-cols-lg-2 m-3">
-          {paises.map((pais) => {
-              return (
-                  <Item key={pais.nombre} product={pais}></Item>
+  return (
+    <>
+      <div className="d-flex justify-content-center">
+        {products.length ? 
+        (products.map(grupo => {
+          if (grupo.id === categoryId) {
+            return (
+              <div key={grupo.id} className='m-2'>
+                <h2 className="m-1">{grupo.nombre}</h2>
+                <div className="d-flex justify-content-center row row-cols-1 row-cols-sm-2 row-cols-lg-2 m-2">
+                {grupo.pais.map(pais => {
+                  return <Item key={pais.id} product={pais}></Item>;
+                }) }
+                </div>
+              </div>
               )
-          })}
-          </div>
-        </>
-
-    );
+          }
+          return null;
+        })) : <ClimbingBoxLoader/>
+        }
+      </div>
+    </>
+  );
 }
 
 export default ItemList;
+

@@ -1,25 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './ItemCount.css';
 
-const ItemCount = ({ID, stock}) => {
+const ItemCount = ({onAdd, ID, stock}) => {
 
     let [count, setCount] = useState(1);
-    let [guardarCarrito, setGuardarCarrito] = useState(0);
-    let [carritoAux, setCarritoAux] = useState(0);
 
-    const handleMinusCount = () => {
+    const onMinusCount = () => {
         (count === 1) ? console.log('valor minimo') : (setCount(count-1));
     }
 
-    const handlePlusCount = () => {
+    const onPlusCount = () => {
+      if (count < stock) {
         setCount(count + 1);
-    }
-
-    /*guarda localStorage 'carrito' en guardarCarrito */
-    const HandleAddCartWidget = e => {
-      e.preventDefault();
-      setCarritoAux(guardarCarrito);
-      setCarritoAux(carritoAux + count);
+      }  
     }
 
     const handleChange = (event) => {
@@ -32,20 +25,6 @@ const ItemCount = ({ID, stock}) => {
         console.log(event.target.value);
     };
 
-    useEffect (() => {
-      if (carritoAux <= stock) {
-        localStorage.setItem(ID, carritoAux);
-      } else {
-      console.log('Excede limite de stock');
-      setCarritoAux(carritoAux-count);
-      }
-
-      setGuardarCarrito(localStorage.getItem(ID));
-
-    }, [carritoAux, ID, count, stock]);
-
-    
-
     return (
     <div className='d-flex justify-content-center p-1'>
       <div className='d-flex justify-content-around counter'>
@@ -54,7 +33,7 @@ const ItemCount = ({ID, stock}) => {
             <button
               type='button'
               className='btn btn-danger btn-number'
-              onClick={handleMinusCount}
+              onClick={onMinusCount}
               name='CounterMinus'
             >
               <span className='glyphicon glyphicon-minus'></span>
@@ -69,7 +48,7 @@ const ItemCount = ({ID, stock}) => {
             <button
               type='button'
               className='btn btn-success btn-number'
-              onClick={handlePlusCount}
+              onClick={onPlusCount}
               name='CounterPlus'
             >
               <span className='glyphicon glyphicon-plus'></span>
@@ -78,7 +57,7 @@ const ItemCount = ({ID, stock}) => {
         </div>
         <div>
             <button className='btn btn-primary m-1' 
-              onClick={HandleAddCartWidget}>
+              onClick={()=>onAdd(count)}>
               Agregar al carrito
             </button>
         </div>

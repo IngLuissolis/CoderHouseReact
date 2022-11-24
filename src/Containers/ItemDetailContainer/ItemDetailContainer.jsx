@@ -1,44 +1,36 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
+import { useEffect } from 'react';
+import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemDetail from '../../Components/ItemDetail/ItemDetail';
+import { Grupo } from '../../Contexts/ProductsContent';
+import {ClimbingBoxLoader} from 'react-spinners';
 
-/*Base de Datos Local*/
-import gruposTodos from '../../BBDD/paises.json';
 
 const ItemDetailContainer = () => {
 
-    const [producto, setProducto] = useState([]);
+    const {producto, products, detalleProducto} = useContext(Grupo);
+    // const [item,setItem] = useState();
 
     const {detailId} = useParams();
 
+    console.log('ItemDetailContainer detailId: ', detailId);
+    // console.log('ItemDetailContainer producto: ', item);
+
     useEffect (() => {
-        (async () => {
+        detalleProducto(detailId);
+    }, [products, detailId, detalleProducto])
 
-            const obtenerProducto = () => {
-                return new Promise((resolve, reject) => {
-                    setTimeout(() => {
-                        resolve(gruposTodos);
-                    },)
-                })
-            }
-
-            const responseProducto = await obtenerProducto();
-            setProducto(responseProducto);
-
-            responseProducto.map((pais) => {
-                if (pais.ID === detailId) {
-                  console.log('Ingreso if: ', pais);
-                  setProducto(pais);
-                }
-              })
-
-        })()
-    },[detailId])
 
     return(
         <>
-            <div className="d-flex justify-content-center align-items-center">
-                <ItemDetail product={producto}/>
+            <div className="d-flex justify-content-center">
+            {producto.length !== 0 ? 
+                <div className="d-flex justify-content-center align-items-center">
+                    <ItemDetail key={producto.id} product={producto}/>;
+                </div>
+                :  <ClimbingBoxLoader/>
+            }
             </div>
         </>
     )

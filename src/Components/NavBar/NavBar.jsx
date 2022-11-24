@@ -7,11 +7,12 @@ import './NavBar.css';
 //En el caso de no utilizar destructuring seria props.mensaje y props.temp
 const NavBar = () => {
     return (
-            <ul className='d-flex justify-content-between m-1'>
+            <ul className='d-flex justify-content-between align-items-center m-1'>
                 <div>
-                    <li><Link to='/'>Home</Link></li>
-                    <li><Link to='/alternativa'>Alternativa</Link></li>
-                </div>
+                    <li className='m-1'><Link to='/'>Home</Link></li>
+                    <li className='m-1'><Link to='/category/GrupoA'>Grupo A</Link></li>
+                    <li className='m-1'><Link to='/category/GrupoB'>Grupo B</Link></li>
+                    </div>
                 <div className='d-flex align-items-center m-1'>
                     <CartWidget/>
                 </div>

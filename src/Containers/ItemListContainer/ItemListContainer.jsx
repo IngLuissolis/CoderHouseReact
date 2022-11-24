@@ -1,70 +1,37 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import './ItemListContainer.css';
+import { Grupo } from "../../Contexts/ProductsContent";
+import {ClimbingBoxLoader} from 'react-spinners';
 
-/*Base de Datos Local*/
-import gruposBBDD from '../../BBDD/grupos.json';
+import './ItemListContainer.css';
 
 const imgBBDD = require.context('../../img', true);
 
 const ItemListContainer = () => {
 
-  const [grupos, setGrupos] = useState([]);
-  const [grupo, setGrupo] = useState();
-  const [paises, setPaises] = useState([]);
-
   const navigate = useNavigate();
-  
-  useEffect(() => {
-    (async () => {
-
-      const obtenerGrupos = () => {
-        return new Promise((resolve, reject) => {
-          setTimeout(() => {
-            resolve(gruposBBDD);
-          }, 1000)
-        })
-      }
-
-      try {
-        const responsePaises = await obtenerGrupos();
-        setGrupos(responsePaises);
-        setPaises(grupos);
-      } catch (error) {
-        console.log('Error: ', error);
-      }
-    }) ()
-
-    if (grupo !== undefined) {
-      navigate(`/category/${grupo}`);
-    }  else {
-      console.log('error - undefined');
-    }
-    
-  }, [grupos, grupo, paises, navigate])
+  const { products } = useContext(Grupo);
 
   return (
     <>
-      <div
-        key={grupos.nombre}
-        className="d-flex justify-content-center row row-cols-1 row-cols-sm-2 row-cols-lg-2"
-      >
-        {grupos.map((grupo) => {
-          return (
+      <div className="d-flex justify-content-center row row-cols-1 row-cols-sm-2 row-cols-lg-2">
+      {products.length ? 
+        products.map((product) => 
+          {return (
             <div
-              key={grupo.ID}
+              key={product.id}
               type="button"
               className="d-flex row justify-content-center m-3"
               id="divContainer"
               onClick={() => {
-                setPaises(grupo.paises);
-                setGrupo(grupo.ID);
+                navigate(`/category/${product.id}`);
               }}
             >
-              <h3 className="m-2">{grupo.nombre}</h3>
+              <h3 className="m-2">{product.nombre}</h3>
               <div>
-                {grupo.paises.map((pais) => {
-                  return (
+                 {product.pais.map((pais) => {
+                    return (
                     <img
                       key={pais.nombre}
                       className="imgBandera m-3"
@@ -75,8 +42,8 @@ const ItemListContainer = () => {
                 })}
               </div>
             </div>
-          );
-        })}
+          )})
+        : <ClimbingBoxLoader/>}
       </div>
     </>
   );

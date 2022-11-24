@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Grupo } from '../../Contexts/ProductsContent';
 import './Item.css';
 
 const imgBBDD = require.context('../../img', true);
@@ -8,18 +10,20 @@ const imgBBDD = require.context('../../img', true);
 const Item = ({product}) => {
 
   const [isChecked, setIsChecked] = useState(false);
+  const { detalleProducto } = useContext(Grupo);
 
   const navigate = useNavigate();
 
   const pulsado = () => {
-    navigate(`/detail/${product.ID}`);
+    navigate(`/detail/${product.id}`);
+    detalleProducto(product.id);
 }
 
   return (
     <>
     <div
       className="card m-3 p-0 d-flex justify-content-center"
-      key={product.ID}
+      key={product.id}
     >
       <div
         className="bg-transparent 
