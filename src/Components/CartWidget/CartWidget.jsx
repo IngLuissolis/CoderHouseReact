@@ -1,5 +1,4 @@
 import React from "react";
-import './CartWidget.css';
 import { useContext } from 'react';
 import { Shop } from '../../Contexts/CartContext';
 import { useNavigate } from "react-router-dom";

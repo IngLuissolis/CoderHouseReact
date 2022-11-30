@@ -1,6 +1,6 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import ItemList from "../Components/ItemList/ItemList";
+// import ItemList from "../Components/ItemList/ItemList";
 import Root from "../Components/Root/Root";
 import CartContainer from "../Containers/CartContainer/CartContainer";
 import ItemDetailContainer from "../Containers/ItemDetailContainer/ItemDetailContainer";
@@ -23,10 +23,10 @@ const router = createBrowserRouter([
             },
             {
                 path: "/category/:categoryId",
-                element: <ItemList />,
+                element: <ItemListContainer />,
             },
             {
-                path: "/detail/:detailId",
+                path: "/detail/:id",
                 element: <ItemDetailContainer />,
             },
             {

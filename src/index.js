@@ -2,17 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import ShopProvider from './Contexts/CartContext';
-import GrupoProvider from './Contexts/ProductsContent';
+// import GrupoProvider from './Contexts/ProductsContent';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ShopProvider>
-      <GrupoProvider>
-        <App />
-      </GrupoProvider>
-    </ShopProvider>
+      <ShopProvider>
+          <App />
+      </ShopProvider>
   </React.StrictMode>
 );
 

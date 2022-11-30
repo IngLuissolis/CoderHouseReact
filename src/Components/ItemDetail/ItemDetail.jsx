@@ -1,24 +1,18 @@
 import React, { useState } from 'react';
-import './ItemDetail.css';
 import ItemCount from '../ItemCount/ItemCount';
 import { useContext } from 'react';
 import { Shop } from '../../Contexts/CartContext';
+import './ItemDetail.css';
 
 const imgBBDD = require.context('../../img', true);
 
 const ItemDetail = ({product}) => {
 
     const {addProduct} = useContext(Shop);
-    // const [quantityItemDetail, setQuantityItemDetail] = useState(0);
-    // const [producto, setProducto] = useState([]);
     const [isChecked, setIsChecked] = useState(false);
 
-    // console.log('ItemDetail product: ', product);
-
-    const confirmPurchase = (quantity) => {
-      // console.log('quantity ItemDetail: ',quantity);
-      addProduct({...product, quantity});
-      // setQuantityItemDetail(quantity);
+    const confirmPurchase = (cantidad) => {
+      addProduct({...product, cantidad});
     }
 
     return (

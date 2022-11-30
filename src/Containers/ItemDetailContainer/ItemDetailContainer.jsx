@@ -1,40 +1,47 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useEffect } from 'react';
-import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemDetail from '../../Components/ItemDetail/ItemDetail';
-import { Grupo } from '../../Contexts/ProductsContent';
-import {ClimbingBoxLoader} from 'react-spinners';
+// import {ClimbingBoxLoader} from 'react-spinners';
+import { db } from '../../firebase/config';
+import { doc, getDoc } from 'firebase/firestore';
+import Loader from '../../Components/Loader/Loader';
 
 
 const ItemDetailContainer = () => {
 
-    const {producto, products, detalleProducto} = useContext(Grupo);
-    // const [item,setItem] = useState();
-
-    const {detailId} = useParams();
-
-    console.log('ItemDetailContainer detailId: ', detailId);
-    // console.log('ItemDetailContainer producto: ', item);
+    const [item,setItem] = useState(null);
+    const {id} = useParams();
 
     useEffect (() => {
-        detalleProducto(detailId);
-    }, [products, detailId, detalleProducto])
+        const getItemDetail = async () => {
+            const docRef = doc(db, "items", id);
+
+            //2do generar la petición
+            const docSnap = await getDoc(docRef);
+
+            if (docSnap.exists()) {
+                setItem({...docSnap.data(), id: docSnap.id})
+            } else {
+                console.log("No such document!");
+            }
+        }
+        getItemDetail();
+    }, [id])
 
 
     return(
         <>
             <div className="d-flex justify-content-center">
-            {producto.length !== 0 ? 
+            {item ? 
                 <div className="d-flex justify-content-center align-items-center">
-                    <ItemDetail key={producto.id} product={producto}/>;
+                    <ItemDetail product={item}/>
                 </div>
-                :  <ClimbingBoxLoader/>
+                :  <Loader />
             }
             </div>
         </>
     )
-
 }
 
 export default ItemDetailContainer;

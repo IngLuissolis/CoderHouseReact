@@ -10,8 +10,8 @@ const NavBar = () => {
             <ul className='d-flex justify-content-between align-items-center m-1'>
                 <div>
                     <li className='m-1'><Link to='/'>Home</Link></li>
-                    <li className='m-1'><Link to='/category/GrupoA'>Grupo A</Link></li>
-                    <li className='m-1'><Link to='/category/GrupoB'>Grupo B</Link></li>
+                    <li className='m-1'><Link to='/category/grupoA'>Grupo A</Link></li>
+                    <li className='m-1'><Link to='/category/grupoB'>Grupo B</Link></li>
                     </div>
                 <div className='d-flex align-items-center m-1'>
                     <CartWidget/>

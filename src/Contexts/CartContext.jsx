@@ -12,21 +12,20 @@ const ShopProvider = ({children}) => {
         console.log('productToAdd: ', productToAdd);
 
         if (flagRepetead) {
-            //Lógica para agregar la quantity y no agregar el producto entero
-
-            //1ero encontramos producto repetido y le adicionamos la cantidad correspondiente
+            //Lógica para agregar la cantidad y no agregar el producto entero
+            //1ero encontramos el producto repetido y le adicionamos la cantidad correspondiente
             const productoRepetidoModificado = productsCart.find(
-                productInCart => productInCart.id === productToAdd.id);
-
-            if ((productoRepetidoModificado.quantity + productToAdd.quantity) <= productoRepetidoModificado.camiseta1Stock) {
-                productoRepetidoModificado.quantity += productToAdd.quantity;
-                //2do quitamos el producto repetido del carrito y colocamos el producto repetido pero modificado
-                const productoCartSinRepetido = productsCart.filter(productsInCart => 
-                    productsInCart.id !== productToAdd.id);
-                    setProductsCart([...productoCartSinRepetido, productoRepetidoModificado])
-            } else {
-                console.log('No se puede agregar a carrito - Supera Stock');
-            }
+                (productInCart) => productInCart.id === productToAdd.id
+            );
+            productoRepetidoModificado.cantidad += productToAdd.cantidad;
+            //2do quitamos el producto repetido del carrito y colocamos el producto repetido pero modificado
+            const productosCartSinRepetido = productsCart.filter(
+                (productsInCart) => productsInCart.id !== productToAdd.id
+            );
+            setProductsCart([
+                ...productosCartSinRepetido,
+                productoRepetidoModificado,
+            ]);
             
         } else {
             setProductsCart([...productsCart, productToAdd]);
@@ -55,14 +54,14 @@ const ShopProvider = ({children}) => {
     //Cálculo del total
     const calculoTotal = () => {
         const total = productsCart.reduce((acumulador, productoActual) => 
-        acumulador += productoActual.quantity * productoActual.camiseta1Precio, 0);
+        acumulador += productoActual.cantidad * productoActual.camiseta1Precio, 0);
         return total;
     }
 
     //Cálculo del total de items del carrito
     const totalItemsCart = () => {
         let totalItems = 0;
-        productsCart.forEach(product => totalItems += product.quantity)
+        productsCart.forEach(product => totalItems += product.cantidad);
         return totalItems;
     }
 
