@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/CoderHouseReact/static/css/main.3209163b.css",
-    "main.js": "/CoderHouseReact/static/js/main.822d32ec.js",
+    "main.css": "/CoderHouseReact/static/css/main.78201068.css",
+    "main.js": "/CoderHouseReact/static/js/main.ba4d9723.js",
     "static/media/fondo-titulo-secundario.jpg": "/CoderHouseReact/static/media/fondo-titulo-secundario.0db0b5b1230804e03be1.jpg",
     "static/media/Camerun1.jpg": "/CoderHouseReact/static/media/Camerun1.eea62a962ae044a22931.jpg",
     "static/media/Mexico2.webp": "/CoderHouseReact/static/media/Mexico2.61189774971f74ea2e75.webp",
@@ -101,11 +101,11 @@
     "static/media/Canada2.webp": "/CoderHouseReact/static/media/Canada2.c016ebb10df3ca2a8081.webp",
     "index.html": "/CoderHouseReact/index.html",
     "static/media/cart.svg": "/CoderHouseReact/static/media/cart.05dfd14f0943edf68c9a.svg",
-    "main.3209163b.css.map": "/CoderHouseReact/static/css/main.3209163b.css.map",
-    "main.822d32ec.js.map": "/CoderHouseReact/static/js/main.822d32ec.js.map"
+    "main.78201068.css.map": "/CoderHouseReact/static/css/main.78201068.css.map",
+    "main.ba4d9723.js.map": "/CoderHouseReact/static/js/main.ba4d9723.js.map"
   },
   "entrypoints": [
-    "static/css/main.3209163b.css",
-    "static/js/main.822d32ec.js"
+    "static/css/main.78201068.css",
+    "static/js/main.ba4d9723.js"
   ]
 }
