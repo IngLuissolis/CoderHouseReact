@@ -1,12 +1,11 @@
 {
   "files": {
-    "main.css": "/CoderHouseReact/static/css/main.78201068.css",
-    "main.js": "/CoderHouseReact/static/js/main.ba4d9723.js",
+    "main.css": "/CoderHouseReact/static/css/main.8c38a520.css",
+    "main.js": "/CoderHouseReact/static/js/main.1fc5b922.js",
     "static/media/fondo-titulo-secundario.jpg": "/CoderHouseReact/static/media/fondo-titulo-secundario.0db0b5b1230804e03be1.jpg",
     "static/media/Camerun1.jpg": "/CoderHouseReact/static/media/Camerun1.eea62a962ae044a22931.jpg",
     "static/media/Mexico2.webp": "/CoderHouseReact/static/media/Mexico2.61189774971f74ea2e75.webp",
     "static/media/ArabiaSaudita2.webp": "/CoderHouseReact/static/media/ArabiaSaudita2.a78a30ffce3d91a52d52.webp",
-    "static/media/Iran2.webp": "/CoderHouseReact/static/media/Iran2.97c29f0a0b90f7371f9b.webp",
     "static/media/Japon1.webp": "/CoderHouseReact/static/media/Japon1.97c29f0a0b90f7371f9b.webp",
     "static/media/CoreaDelSur2.webp": "/CoderHouseReact/static/media/CoreaDelSur2.1efcdaa11ea6008b52c1.webp",
     "static/media/BanderaArabiaSaudita.png": "/CoderHouseReact/static/media/BanderaArabiaSaudita.b5c523c0e4789cdc074e.png",
@@ -39,7 +38,6 @@
     "static/media/Croacia1.webp": "/CoderHouseReact/static/media/Croacia1.8f63851c52b89491e05f.webp",
     "static/media/Belgica1.webp": "/CoderHouseReact/static/media/Belgica1.a28f8df6a8c3803e5a42.webp",
     "static/media/Argentina1.webp": "/CoderHouseReact/static/media/Argentina1.94189568de4a19261da0.webp",
-    "static/media/Camerun2.webp": "/CoderHouseReact/static/media/Camerun2.7b8c7cb2c1d59cc27b53.webp",
     "static/media/España1.webp": "/CoderHouseReact/static/media/España1.80e70ea03514ff311109.webp",
     "static/media/BanderaIran.png": "/CoderHouseReact/static/media/BanderaIran.5437059a60d6fc812093.png",
     "static/media/Inglaterra2.webp": "/CoderHouseReact/static/media/Inglaterra2.0cd9cb68974d602986c7.webp",
@@ -49,18 +47,19 @@
     "static/media/Portugal1.webp": "/CoderHouseReact/static/media/Portugal1.b366ea804ac759898f6c.webp",
     "static/media/Brasil2.webp": "/CoderHouseReact/static/media/Brasil2.6f5203e35c24b871489f.webp",
     "static/media/Dinamarca1.webp": "/CoderHouseReact/static/media/Dinamarca1.11b0fc1c43354d1156d8.webp",
+    "static/media/Iran2.webp": "/CoderHouseReact/static/media/Iran2.5464c42468152a7a0c37.webp",
     "static/media/BanderaArgentina.png": "/CoderHouseReact/static/media/BanderaArgentina.376e389ff57930282ffb.png",
     "static/media/BanderaEcuador.png": "/CoderHouseReact/static/media/BanderaEcuador.bf5373f0e871e9b6a2cb.png",
     "static/media/BanderaUruguay.png": "/CoderHouseReact/static/media/BanderaUruguay.8c8583ff608e0f2283d6.png",
     "static/media/BanderaPaisesBajos.png": "/CoderHouseReact/static/media/BanderaPaisesBajos.89740bd0b66bfdf9b0a6.png",
     "static/media/CoreaDelSur1.webp": "/CoderHouseReact/static/media/CoreaDelSur1.f01273ef8e852194ad75.webp",
-    "static/media/Iran1.webp": "/CoderHouseReact/static/media/Iran1.2e589ca1a4e0a613b0a0.webp",
     "static/media/Senegal1.webp": "/CoderHouseReact/static/media/Senegal1.2e589ca1a4e0a613b0a0.webp",
     "static/media/Alemania1.webp": "/CoderHouseReact/static/media/Alemania1.7becccfb9b3b056d3787.webp",
     "static/media/BanderaJapon.png": "/CoderHouseReact/static/media/BanderaJapon.a16c066dbe1e0ca0560c.png",
     "static/media/BanderaCanada.png": "/CoderHouseReact/static/media/BanderaCanada.07849426f9b46d419f07.png",
     "static/media/Ghana2.webp": "/CoderHouseReact/static/media/Ghana2.b1a5e24815f1c4889e7e.webp",
     "static/media/Japon2.webp": "/CoderHouseReact/static/media/Japon2.1b2309e64732e344975c.webp",
+    "static/media/Camerun1.webp": "/CoderHouseReact/static/media/Camerun1.2df9fe78bb2c9a31c107.webp",
     "static/media/BanderaGhana.png": "/CoderHouseReact/static/media/BanderaGhana.ac0abec4f75879cc87b6.png",
     "static/media/Canada1.webp": "/CoderHouseReact/static/media/Canada1.feedcc6ff677b001075f.webp",
     "static/media/BanderaSenegal.png": "/CoderHouseReact/static/media/BanderaSenegal.82cb90721e70c6adaddc.png",
@@ -72,6 +71,7 @@
     "static/media/BanderaFrancia.png": "/CoderHouseReact/static/media/BanderaFrancia.73f91b4e96d67f8a03f0.png",
     "static/media/BanderaCroacia.png": "/CoderHouseReact/static/media/BanderaCroacia.49818b51e599cdf57f71.png",
     "static/media/BanderaCostaRica.png": "/CoderHouseReact/static/media/BanderaCostaRica.b2ea931620c2bf59de8a.png",
+    "static/media/Camerun2.webp": "/CoderHouseReact/static/media/Camerun2.20747a75b9ed2846d013.webp",
     "static/media/Croacia2.webp": "/CoderHouseReact/static/media/Croacia2.e0366aacd9d29ad144cb.webp",
     "static/media/Uruguay1.webp": "/CoderHouseReact/static/media/Uruguay1.2aa828fd2bd58ae0d424.webp",
     "static/media/BanderaPolonia.png": "/CoderHouseReact/static/media/BanderaPolonia.a498d547b8c6fc3ccf55.png",
@@ -81,6 +81,7 @@
     "static/media/Belgica2.webp": "/CoderHouseReact/static/media/Belgica2.efeb50921dce81c4a03c.webp",
     "static/media/Suiza2.webp": "/CoderHouseReact/static/media/Suiza2.7e7789d7c40133e7cc70.webp",
     "static/media/Marruecos1.webp": "/CoderHouseReact/static/media/Marruecos1.3ad56e122b6b42f6b1f9.webp",
+    "static/media/Iran1.webp": "/CoderHouseReact/static/media/Iran1.0f0df7383a0bb32deaca.webp",
     "static/media/BanderaSuiza.png": "/CoderHouseReact/static/media/BanderaSuiza.c677c6035aebb9762292.png",
     "static/media/Francia2.webp": "/CoderHouseReact/static/media/Francia2.b0e29a9cbafce38471d4.webp",
     "static/media/BanderaEspaña.png": "/CoderHouseReact/static/media/BanderaEspaña.7ab20088ad372c62ab72.png",
@@ -101,11 +102,11 @@
     "static/media/Canada2.webp": "/CoderHouseReact/static/media/Canada2.c016ebb10df3ca2a8081.webp",
     "index.html": "/CoderHouseReact/index.html",
     "static/media/cart.svg": "/CoderHouseReact/static/media/cart.05dfd14f0943edf68c9a.svg",
-    "main.78201068.css.map": "/CoderHouseReact/static/css/main.78201068.css.map",
-    "main.ba4d9723.js.map": "/CoderHouseReact/static/js/main.ba4d9723.js.map"
+    "main.8c38a520.css.map": "/CoderHouseReact/static/css/main.8c38a520.css.map",
+    "main.1fc5b922.js.map": "/CoderHouseReact/static/js/main.1fc5b922.js.map"
   },
   "entrypoints": [
-    "static/css/main.78201068.css",
-    "static/js/main.ba4d9723.js"
+    "static/css/main.8c38a520.css",
+    "static/js/main.1fc5b922.js"
   ]
 }
