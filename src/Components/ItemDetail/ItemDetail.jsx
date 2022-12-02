@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ItemCount from '../ItemCount/ItemCount';
 import { useContext } from 'react';
 import { Shop } from '../../Contexts/CartContext';
@@ -9,10 +9,10 @@ const imgBBDD = require.context('../../img', true);
 const ItemDetail = ({product}) => {
 
     const {addProduct} = useContext(Shop);
-    const [isChecked, setIsChecked] = useState(false);
 
     const confirmPurchase = (cantidad) => {
-      addProduct({...product, cantidad});
+      let precioParcial = cantidad*product.precio;
+      addProduct({...product, cantidad, precioParcial});
     }
 
     return (
@@ -31,33 +31,15 @@ const ItemDetail = ({product}) => {
                 />
               </div>
               <img
-                className="imgCamiseta m-1"
-                src={
-                  isChecked
-                  ? imgBBDD("./" + product.camiseta2)
-                  : imgBBDD("./" + product.camiseta1)}
+                className="imgCamiseta m-1 p-1"
+                src={imgBBDD("./" + product.imgCamiseta)}
                 alt="img camiseta"
               />
-              <p className="m-2 p-0">Stock: {isChecked ? product.camiseta2Stock : product.camiseta1Stock}</p>
-              <p>Precio: ${isChecked ? product.camiseta2Precio : product.camiseta1Precio}</p>
-              <div className="d-flex justify-content-center align-items-center alternativaContainer ms-5 me-5">
-                <input
-                  className="form-check-input m-1 p-0"
-                  type="checkbox"
-                  value=""
-                  id="firstCheckbox"
-                  onChange={() => setIsChecked((prev) => !prev)}
-                />
-                <label
-                  className="form-check-label m-1 p-0"
-                  htmlFor="firstCheckbox"
-                >
-                  Alternativa
-                </label>
-              </div>
+              <p className="m-1 p-1">Stock: {product.stock}</p>
+              <p className="m-1 p-1">Precio: ${product.precio}</p>
+              <p className="m-1 p-1">Descripción: Camiseta {product.camiseta}</p>
               <ItemCount onAdd={confirmPurchase} ID={product.id}
-                stock={
-                  isChecked ? product.camiseta2Stock : product.camiseta1Stock}/>
+                stock={product.stock}/>
             </div>
           </>
         )}

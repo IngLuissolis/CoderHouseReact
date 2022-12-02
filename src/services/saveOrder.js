@@ -52,13 +52,13 @@ export const saveOrder = async (nombreComprador, telefono, email, products, tota
 
                 console.log('productInFirebase saveOrder: ',productInFirebase);
 
-                console.log('productInCart.camiseta1Stock: ',productInCart.camiseta1Stock);
-                console.log('productInFirebase.camiseta1Stock: ',productInFirebase.camiseta1Stock);
+                console.log('productInCart.stock: ',productInCart.stock);
+                console.log('productInFirebase.stock: ',productInFirebase.stock);
                 // Actualizo el stock del producto
                 await updateDoc(productRef, {
-                    camiseta1Stock:
-                        productInFirebase.camiseta1Stock -
-                        productInCart.camiseta1Stock,
+                    stock:
+                        productInFirebase.stock -
+                        productInCart.cantidad,
                 });
             }
     
@@ -77,8 +77,8 @@ export const saveOrder = async (nombreComprador, telefono, email, products, tota
                     (productFirebase) => productFirebase.id === product.id
                 );
                 console.log(productInFirebase);
-                mensaje += `${product.nombre}, stock disponible: ${productInFirebase.camiseta1Stock}, 
-                cantidad pedida: ${product.camiseta1Stock}\n`;
+                mensaje += `${product.nombre}, stock disponible: ${productInFirebase.stock}, 
+                cantidad pedida: ${product.cantidad}\n`;
             }
             alert(`Hay producto/s fuera de stock: \n${mensaje}`);
         }

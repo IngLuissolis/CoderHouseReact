@@ -18,3 +18,7 @@
 .card {
     width: 30rem;
 }
+
+.button:hover {
+    box-shadow: 0 0 10px 0 #9e296d inset, 0 0 10px 4px #9e296d;
+  }

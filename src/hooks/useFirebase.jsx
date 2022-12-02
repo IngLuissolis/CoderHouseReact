@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import { db } from '../firebase/config';
+import { useContext } from "react";
+import { Theme } from "../Contexts/CamisetaContext";
 
 const useFirebase = (categoryId) => {
+
+    const {themeCamiseta} = useContext(Theme);
 
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
@@ -14,11 +18,15 @@ const useFirebase = (categoryId) => {
                 //Codigo añadido de la documentacion firestore
                 //1er paso: armar la query
                 setLoading(true);
+
                 let q;
                 if (categoryId) {
-                    q = query(collection(db, "items"), where("grupo", "==", categoryId))
+                    q = query(collection(db, "items"), 
+                        where("grupo", "==", categoryId), 
+                        where ("camiseta", "==", themeCamiseta));
                 } else {
-                    q = query(collection(db, "items"));
+                    q = query(collection(db, "items"), 
+                        where("camiseta", "==", themeCamiseta));
                 }
                 //2do paso: realizar la query
                 const querySnapshot = await getDocs(q);
@@ -34,7 +42,7 @@ const useFirebase = (categoryId) => {
               }
         })()
 
-    }, [categoryId])
+    }, [categoryId, themeCamiseta])
 
     return [data, error, loading];
 

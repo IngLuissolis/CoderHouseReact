@@ -6,12 +6,13 @@ import { Shop } from "../../Contexts/CartContext";
 import { saveOrder } from "../../services/saveOrder";
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
+import './CartContainer.css';
 
 const MySwal = withReactContent(Swal);
 
 const CartContainer = () => {
 
-    const {productsCart, totalItemsCart, calculoTotal, emptyCart} = useContext(Shop);
+    const {productsCart, calculoTotal, emptyCart} = useContext(Shop);
     const [datos, setDatos] = useState({
         nombre: '',
         email: '',
@@ -44,18 +45,16 @@ const CartContainer = () => {
 
     useEffect(() => {
         if(datos.nombre !== '' && datos.email !== '' && datos.telefono !== '' && productsCart.length !== 0) {
-            console.log("datos Form: ", datos);
-            console.log("productsCart Form: ", productsCart);
-            // (async () => {
-            //     //guardar datos de usuario y productos en order
-            //     await saveOrder(
-            //         datos.nombre,
-            //         datos.telefono,
-            //         datos.email,
-            //         productsCart,
-            //         calculoTotal()
-            //     )
-            // })();
+            (async () => {
+                //guardar datos de usuario y productos en order
+                await saveOrder(
+                    datos.nombre,
+                    datos.telefono,
+                    datos.email,
+                    productsCart,
+                    calculoTotal()
+                )
+            })();
             setDatos({'nombre': '', 'email': '', 'telefono': ''});
             emptyCart();
         } else if (productsCart.length === 0) {
@@ -65,16 +64,23 @@ const CartContainer = () => {
 
     return(
         <>
-            { 
-                productsCart.map(product => {
-                    console.log('CartContainer: ',product);
-                    return <CartItem item={product} key={product.id}/>;
+            {
+                productsCart.length === 0 ?
+                    <h3 className="carritoVacio">Tu carrito está vacío</h3>
+                : productsCart.map(product => {
+                    return (
+                        <CartItem key={product.id} item={product} />
+                        );
                     })
             }
 
-            <h2 className="d-flex justify-content-end m-2 p-1">Total {totalItemsCart()}</h2>
-            <button className="btn btn-success p-3" 
-                onClick={handleClick}>Comprar</button>
+            <h2 className="d-flex justify-content-end m-3 p-1">Total ${calculoTotal().toLocaleString()}</h2>
+            <div className="d-flex justify-content-end">
+                <button className="btn btn-info m-2 p-3" 
+                    onClick={handleClick}>
+                        Continuar Compra
+                </button>
+            </div>
         </>
     );
 }

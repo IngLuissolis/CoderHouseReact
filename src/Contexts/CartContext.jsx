@@ -9,7 +9,6 @@ const ShopProvider = ({children}) => {
     const addProduct = (productToAdd) => {
 
         const flagRepetead = isInCart(productToAdd.id);
-        console.log('productToAdd: ', productToAdd);
 
         if (flagRepetead) {
             //Lógica para agregar la cantidad y no agregar el producto entero
@@ -18,6 +17,7 @@ const ShopProvider = ({children}) => {
                 (productInCart) => productInCart.id === productToAdd.id
             );
             productoRepetidoModificado.cantidad += productToAdd.cantidad;
+            productoRepetidoModificado.precioParcial += productToAdd.precioParcial;
             //2do quitamos el producto repetido del carrito y colocamos el producto repetido pero modificado
             const productosCartSinRepetido = productsCart.filter(
                 (productsInCart) => productsInCart.id !== productToAdd.id
@@ -30,8 +30,6 @@ const ShopProvider = ({children}) => {
         } else {
             setProductsCart([...productsCart, productToAdd]);
         }
-
-        console.log('products CartContext: ', productsCart);
 
     }
 
@@ -51,10 +49,10 @@ const ShopProvider = ({children}) => {
         setProductsCart([])
     }
 
-    //Cálculo del total
+    //Cálculo del precio total
     const calculoTotal = () => {
         const total = productsCart.reduce((acumulador, productoActual) => 
-        acumulador += productoActual.cantidad * productoActual.camiseta1Precio, 0);
+        acumulador += productoActual.cantidad * productoActual.precio, 0);
         return total;
     }
 

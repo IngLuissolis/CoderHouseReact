@@ -14,12 +14,19 @@ const Cart = ({item}) => {
       }
 
     return(
+        <>
             <div className="d-flex justify-content-between align-items-center m-3 p-1">
-                <img className='imgCamisetaCart' src={imgBBDD("./" + item.camiseta1)} alt='item-bandera'></img>
-                <h2 className="m-1 p-0">{item.nombre}</h2>
-                <span>Cantidad: {item.cantidad}</span>
-                <button className="btn btn-danger" onClick={handleRemove}>Eliminar</button>
+                <img className='imgCamisetaCart' src={imgBBDD("./" + item.imgCamiseta)} alt='item-bandera'></img>
+                <h3 className="m-1 p-0">{item.nombre}</h3>
+                <span className="m-1 p-0">Camiseta {item.camiseta}</span>
+                <span className="m-1 p-0">Cantidad {item.cantidad}</span>
+                <span className="m-1 p-0">${item.precioParcial.toLocaleString()}</span>
+                <button className="btn btn-danger" onClick={handleRemove}>Quitar</button>
             </div>
+            <div className="astrodivider">
+                <div className="astrodividermask"></div>
+            </div>
+       </>
     );
 }
 
