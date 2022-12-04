@@ -1,18 +1,30 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
 import ItemCount from '../ItemCount/ItemCount';
-import { useContext } from 'react';
 import { Shop } from '../../Contexts/CartContext';
 import './ItemDetail.css';
+import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
+
 
 const imgBBDD = require.context('../../img', true);
+const MySwal = withReactContent(Swal);
 
 const ItemDetail = ({product}) => {
 
     const {addProduct} = useContext(Shop);
+    const navigate = useNavigate();
+
+    const [cantidadItemDetail, setCantidadItemDetail] = useState(0);
 
     const confirmPurchase = (cantidad) => {
       let precioParcial = cantidad*product.precio;
       addProduct({...product, cantidad, precioParcial});
+      setCantidadItemDetail(cantidad);
+    }
+
+    const handleNavigate = () => {
+      navigate('/cart');
     }
 
     return (
@@ -38,8 +50,15 @@ const ItemDetail = ({product}) => {
               <p className="m-1 p-1">Stock: {product.stock}</p>
               <p className="m-1 p-1">Precio: ${product.precio}</p>
               <p className="m-1 p-1">Descripción: Camiseta {product.camiseta}</p>
-              <ItemCount onAdd={confirmPurchase} ID={product.id}
+              {cantidadItemDetail ? 
+                (MySwal.fire({
+                        title: 'Producto Agregado al Carrito',
+                        confirmButtonText: "OK",
+                      }),
+                <button className="btn btn-primary m-2 p-1" onClick={handleNavigate}>Go cart</button>)
+                : <ItemCount onAdd={confirmPurchase} ID={product.id}
                 stock={product.stock}/>
+              }
             </div>
           </>
         )}

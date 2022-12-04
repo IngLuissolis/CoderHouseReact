@@ -2,18 +2,22 @@
  * JsDocs
  * Funcion que recibe datos de usuario, productos y genera la orden
  * La orden se guarda en Firebase
-
  */
 
 import { addDoc, collection, doc, getDoc, updateDoc } from "firebase/firestore";
 import { db } from "../firebase/config";
 import generateOrderObjects from "./generateOrderObjects";
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 
-export const saveOrder = async (nombreComprador, telefono, email, products, total) => {
+const MySwal = withReactContent(Swal);
+
+export const saveOrder = async (nombreComprador, apellido, telefono, email, products, total) => {
     try {
 
         const generatedOrder = generateOrderObjects(
             nombreComprador,
+            apellido,
             telefono,
             email,
             products,
@@ -29,16 +33,16 @@ export const saveOrder = async (nombreComprador, telefono, email, products, tota
             const docSnap = await getDoc(docRef);
             const productInFirebase = { ...docSnap.data(), id: docSnap.id };
             productsInFirebase.push(productInFirebase);
-            if (productInCart.camiseta1Stock > productInFirebase.camiseta1Stock)
+            if (productInCart.cantidad > productInFirebase.stock)
                 productOutOfStock.push(productInCart);
         }
 
-        console.log(productOutOfStock);
-        console.log(productsInFirebase);
+        console.log("productOutOfStock: ",productOutOfStock);
+        console.log("productsInFirebase: ",productsInFirebase);
         
         if (productOutOfStock.length === 0) {
             //Disminuir el stock existente
-            console.log(products);
+            console.log("products:" ,products);
     
             for (const productInCart of products) {
                 const productInFirebase = productsInFirebase.find(
@@ -67,9 +71,10 @@ export const saveOrder = async (nombreComprador, telefono, email, products, tota
                 collection(db, "orders"),
                 generatedOrder
             );
-            alert(
-                `Se generó la order correctamente con ID: ${docRef.id}`
-            );
+            MySwal.fire({
+                title: `Se generó la order correctamente con ID: ${docRef.id}`,
+                confirmButtonText: "ok",
+            })
         } else {
             let mensaje = "";
             for (const product of productOutOfStock) {
@@ -83,6 +88,6 @@ export const saveOrder = async (nombreComprador, telefono, email, products, tota
             alert(`Hay producto/s fuera de stock: \n${mensaje}`);
         }
     } catch (error) {
-        console.log(error);
+        console.log("Error: ",error);
     }
 }

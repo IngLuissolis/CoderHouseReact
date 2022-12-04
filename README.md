@@ -1,35 +1,36 @@
 # Tienda Indumentaria Mundial Futbol Qatar 2022
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+👋 Bienvenido/da
 
-## Descripción del Proyecto:
+# Descripción del Proyecto:
 
-Proyecto para la venta de camisetas de los paises que estan jugando el campeonato mundial de futbol Qatar 2022
+Proyecto para la venta de camisetas de los paises que estan jugando el campeonato mundial de futbol Qatar 2022 desarrollado con tecnologia React
 
 # Estado del Proyecto
 
+
 # Tecnologias utilizadas
 
-## ReactJS
+- ReactJS
 
-## HTML
+- HTML
 
-## CSS
+- CSS
 
-## JavaScript
+- JavaScript
 
-## Bootstrap
+- Bootstrap
 
 # Librerias utilizadas
 
-## sweetalert2-react-content
-    Se implemento para mostrar ventana en donde se cargan los datos que genera la orden de compra
+### sweetalert2-react-content
+    Se implemento para mostrar ventana en donde se cargan los datos que genera la orden de compra.
 
-## react-spinners
-     Se implemento para mostrar spinner al solicitar los datos provenientes de Firebase
+### react-spinners
+     Se implemento para mostrar spinner al solicitar los datos provenientes de Firebase.
 
-## Firebase
-    
+### Firebase
+    Se utiliza para guardar los datos de productos y las ordenes de compra generadas.
 # Customer Homepage
 
 Imagen listContainer
@@ -45,6 +46,8 @@ Imagen CartContainer
 Imagen ventana sweetalert2
 
 # Sitio Deployed
+
+[https://ingluissolis.github.io/CoderHouseReact/]
 
 # Feedback
 
