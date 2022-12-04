@@ -29,9 +29,6 @@ Proyecto para la venta de camisetas de los paises que estan jugando el campeonat
 ### sweetalert2-react-content
     Se implemento para mostrar ventana en donde se cargan los datos que genera la orden de compra.
 
-### react-spinners
-     Se implemento para mostrar spinner al solicitar los datos provenientes de Firebase.
-
 ### Firebase
     Se utiliza para guardar los datos de productos y las ordenes de compra generadas.
 # Customer Homepage
