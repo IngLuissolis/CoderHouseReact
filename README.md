@@ -8,7 +8,7 @@ Proyecto para la venta de camisetas de los paises que estan jugando el campeonat
 
 # Estado del Proyecto
 
-- Falta optimizar archivo CartContaier.jsx
+- Falta optimizar archivo CartContainer.jsx
 - Mejorar diseño
 - Agregar Pagina web de Bienvenida
 
