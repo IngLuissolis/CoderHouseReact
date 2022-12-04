@@ -8,6 +8,9 @@ Proyecto para la venta de camisetas de los paises que estan jugando el campeonat
 
 # Estado del Proyecto
 
+- Falta optimizar archivo CartContaier.jsx
+- Mejorar diseño
+- Agregar Pagina web de Bienvenida
 
 # Tecnologias utilizadas
 
@@ -33,9 +36,9 @@ Proyecto para la venta de camisetas de los paises que estan jugando el campeonat
     Se utiliza para guardar los datos de productos y las ordenes de compra generadas.
 # Customer Homepage
 
-Imagen listContainer
+Animación Gif ecommerce
 
-Imagen ItemDetailContainer
+https://github.com/IngLuissolis/CoderHouseReact/tree/main/src/img/Ecommerce-React-Solis-12-22.gif
 
 # Cart
 
@@ -51,17 +54,6 @@ Imagen ventana sweetalert2
 
 # Feedback
 
-Any suggestion and feedback is welcome. You can message me on Instagram
+Any suggestion and feedback is welcome. You can message me on email
 
-Contact on Instagram
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+`edusolis@yahoo.com.ar`
