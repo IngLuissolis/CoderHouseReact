@@ -35,15 +35,11 @@ Proyecto para la venta de camisetas de los paises que estan jugando el campeonat
 
 Animación Gif ecommerce
 
-![Ecommerce-React-Solis-12-22](https://user-images.githubusercontent.com/72393640/205513762-63f6e09a-823a-4b10-91cc-8b399371fdd1.gif)
 
-# Cart - Orders
-
-![tiendamundial-react-order](https://user-images.githubusercontent.com/72393640/205519715-698e5d29-4ef0-4458-85b2-1b69a3bde935.gif)
 
 # Sitio Deployed
 
-[https://ingluissolis.github.io/CoderHouseReact/]
+https://ingluissolis.github.io/CoderHouseReact/
 
 # Feedback
 
